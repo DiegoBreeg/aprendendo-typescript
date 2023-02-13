@@ -29,17 +29,17 @@ O resultado deve ser um arquivo chamado tsconfig.json e o terminal exibirá mens
   skipLibCheck: true
   forceConsistentCasingInFileNames: true"
 
-"target" é o responsável por alterar a versão alvo em que javascript será transpilado. apagando es2016, segurando ctrl+spaço podemos verificar quais versões podem ser utilizadas.
+- "target" é o responsável por alterar a versão alvo em que javascript será transpilado. apagando es2016, segurando ctrl+spaço podemos verificar quais versões podem ser utilizadas.
 
-"module" assim como em package.json também é possível alterar a forma como será importado/exportado as bibliotecas.
+- "module" assim como em package.json também é possível alterar a forma como será importado/exportado as bibliotecas.
 
-"rootDir" é a configuração que determinará a raíz do projeto. Por convensão utiliza-se o diretório ./src
+- "rootDir" é a configuração que determinará a raíz do projeto. Por convensão utiliza-se o diretório ./src
 
-"outDir" é responsável por determinal em qual pasta o conteúdo javascript será gerado, Por convensão utiliza-se o diretório ./dist
+- "outDir" é responsável por determinal em qual pasta o conteúdo javascript será gerado, Por convensão utiliza-se o diretório ./dist
 
-"removeComments" se ativado remove todos os comentários feitos no arquivo ts quando transpilado para js
+- "removeComments" se ativado remove todos os comentários feitos no arquivo ts quando transpilado para js
 
-"noEmitOnError" é uma configuração interessante para ser utilizada, pois impede que o javascript seja gerado em caso de erros
+- "noEmitOnError" é uma configuração interessante para ser utilizada, pois impede que o javascript seja gerado em caso de erros
 
 Feita toda a configuração, basta digitar
 $tsc
