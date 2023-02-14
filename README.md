@@ -1,11 +1,14 @@
 Estudos sobre Typescript
 
-- Características:
-tipagem estática, completação de código, refatoração, notações shorthand.
+- Características
+
+
+Tipagem estática, completação de código, refatoração, notações shorthand.
 
 Typescript é essencialmente javascript com checagem de tipos, um código feito em typescript é compilado para javascript, o nome desse processo é transpilação.
 
-- Configurações de ambiente:
+- Configurações de ambiente
+
 Typescript é um superset de javascript, ele tem tudo que existe no javascript e um adicional de features. Qualquer código javascrip é um código typescrip válido.
 
 É necessário ter o node instalado, e a partir do node podemos utilizar o npm para instalar o typescript de forma global no sistema.
@@ -18,7 +21,8 @@ Também é necessário ter um editor de código instalado, recomendo fortemente 
 
 Por padrão typescript transpila para ES5, ou seja, ao declarar-mos uma let ela será transpirada para var, porém podemos configurar para que seja transpiloado para ES6.
 
-Podemos criar um arquivo de configuração para o compilador typescript com o seguinte código:
+Podemos criar um arquivo de configuração para o compilador typescript com o seguinte código
+
 $tsc --init
 
 O resultado deve ser um arquivo chamado tsconfig.json e o terminal exibirá mensaguem parecida com esta:
@@ -71,6 +75,7 @@ Pelas boas práticas é desejável não utilizar o any type para evitar bugs. Ta
 Ao declararmos uma função devemos nos certificar de atribuir um tipo para o parâmetro de forma explícita, pois o compilador automaticamente o define como any caso isso não seja feito.
 
 - Arrays
+
 Assim como em javascript, em typescript podemos declarar arrays com elementos de tipos diferentes:
 
 let numbers = [1, 2, '3']
@@ -98,7 +103,9 @@ Tuple é um novo tipo introduzido pelo typescript, ele possui o tamanho de sua l
 
 let user: [number, string] = [1, 'Diego']
 
-- Enums: É um conjunto de constantes relacionadas entre si. Pode ser utilizado como tipo durante declaração de uma variável cujo valor atribuído deve ser um de seus membros. Quando o valor de cada membro não é declarado explicitamente passa a ser uma progrssão dos números naturais começando do 0
+- Enums
+
+ É um conjunto de constantes relacionadas entre si. Pode ser utilizado como tipo durante declaração de uma variável cujo valor atribuído deve ser um de seus membros. Quando o valor de cada membro não é declarado explicitamente passa a ser uma progrssão dos números naturais começando do 0
 
 enum Size { Small, Medium, Large}
 
