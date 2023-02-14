@@ -159,7 +159,7 @@ let myColor: Color = Color.Blue //=> 'b'
 
 - Functions
 
-Ao declarar uma função, é possível definir o tipo do argumento e do retorno. O compilador infere automaticamente o tipo do retorno, se não houver retorno o tipo será void. Porém. pelas boas práticas, é recomendável declararmos o tipo dos argumentos e em seguida do retorno, principalmente se estivermos construíndo uma API que outras pessoas usarão:
+Ao declarar uma função, é possível definir o tipo do argumento e do retorno. O compilador infere automaticamente o tipo do retorno, se não houver retorno o tipo será void. Porém, pelas boas práticas, é recomendável declararmos o tipo dos argumentos e em seguida do retorno, principalmente se estivermos construíndo uma API que outras pessoas usarão:
 
 ```ts
 function calculateTax( income: number): number {
@@ -179,7 +179,7 @@ function calculateTax( income: number): number {
 }
 ```
 
-Se removermos a declaração do tipo do retorno o compilador não arremeçará mais o erro, porém nossa aplicação poderá gerar bugs, portanto, é altemente recomendável explicitar o tipo de retorno dad funções.
+Se removermos a declaração do tipo do retorno o compilador não arremeçará mais o erro, porém nossa aplicação poderá gerar bugs, portanto, é altemente recomendável explicitar o tipo de retorno das funções.
 
 ```ts
 function calculateTax( income: number) {
@@ -200,7 +200,7 @@ function calculateTax( income: number): number {
 }
 ```
 
-Ainda sobre funções, existe uma configuração no tsconfig.json chamada "noUnusedLocals", quando ativada gera erro ao declararmos variáeis que não são usadas no escopo da função.
+Ainda sobre funções, existe uma configuração no tsconfig.json chamada "noUnusedLocals", quando ativada gera erro ao declararmos variáveis que não são usadas no escopo da função.
 
 Se declararmos uma função que recebe dois parâmetros, ao executá-la devemos fornecer exatamente 2 parâmetros. Se passarmos mais ou menos do que isso o compilador gera erro. Para podermos passar mais ou menos parâmetros podemos o tornar opicial colocando um sinal de interrocação (?) no nome do parâmetro:
 
@@ -214,7 +214,7 @@ function calculateTax( income: number, taxYear?: number):number  {
 calculateTax(10_000)
 ```
 
-Note que desta forma o compilador ainda acusará um erro, pos o valor de ```taxYear``` neste caso será ```undefined```. Javascript por padrão coloca o valor ```undefined``` nas variáveis que não são utilizadas. Para resolvermos este problema basta definir um valor padrão caso ```taxYear``` não seja infomado:
+Note que desta forma o compilador ainda acusará um erro, pois o valor de ```taxYear``` neste caso será ```undefined```. Javascript por padrão coloca o valor ```undefined``` nas variáveis que não são utilizadas. Para resolvermos este problema basta definir um valor padrão caso ```taxYear``` não seja infomado:
 
 ```ts
 function calculateTax( income: number, taxYear?: number):number  {
