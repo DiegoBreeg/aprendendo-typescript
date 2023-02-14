@@ -226,3 +226,13 @@ function calculateTax( income: number, taxYear?: number):number  {
 calculateTax(10_000)
 ```
 
+Outra forma de tornar um parâmetro opcional é definir um valor padrão para ele caso não seja informado e consequentemente impedir que seja undefined:
+
+```ts
+function calculateTax( income: number, taxYear: number = 2022):number  {
+    if ( taxYear < 2022)
+        return income * 1.2
+    return income * 1.3
+}
+```
+
