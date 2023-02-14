@@ -154,6 +154,15 @@ O valor de cada constante pode ser definido manualmente simplesmente colocando o
 
 ```ts
 enum Color {Red = 'r', Green = 'g', Blue = 'b'}
-let myColor: Color = Color.Blue => 'b'
+let myColor: Color = Color.Blue //=> 'b'
 ```
 
+- Functions
+
+Ao declarar uma função, é possível definir o tipo do argumento e do retorno. O compilador infere automaticamente o tipo do retorno, se não houver retorno o tipo será void. Porém. pelas boas práticas, é recomendável declararmos o tipo dos argumentos e em seguida do retorno, principalmente se estivermos construíndo uma API que outras pessoas usarão:
+
+```ts
+function calculateTax( income: number): number {
+    return 0;
+}
+```
