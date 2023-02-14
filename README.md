@@ -201,3 +201,27 @@ function calculateTax( income: number): number {
 ```
 
 Ainda sobre funções, existe uma configuração no tsconfig.json chamada "noUnusedLocals", quando ativada gera erro ao declararmos variáeis que não são usadas no escopo da função.
+
+Se declararmos uma função que recebe dois parâmetros, ao executá-la devemos fornecer exatamente 2 parâmetros. Se passarmos mais ou menos do que isso o compilador gera erro. Para podermos passar mais ou menos parâmetros podemos o tornar opicial colocando um sinal de interrocação (?) no nome do parâmetro:
+
+```ts
+function calculateTax( income: number, taxYear?: number):number  {
+    if ( taxYear < 2022)
+        return income * 1.2
+    return income * 1.3
+}
+
+calculateTax(10_000)
+```
+
+Note que desta forma o compilador ainda acusará um erro, pos o valor de txYear neste caso será "undefined". Javascript por padrão coloca o valor "undefined" nas variáveis que não são utilizadas. Para resolvermos este problema basta definir um valor padrão caso taxYear não seja infomado:
+
+```ts
+function calculateTax( income: number, taxYear?: number):number  {
+    if ( (taxYear || 2022) < 2022)
+        return income * 1.2
+    return income * 1.3
+}
+
+calculateTax(10_000)
+```
