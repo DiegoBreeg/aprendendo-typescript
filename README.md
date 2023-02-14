@@ -52,12 +52,39 @@ Javascript possui built-in types que são: number, string, boolean, null, undefi
 Typescript introduz novos tipos que são: any, unknown, never, enum e tuple
 
 Podemos declarar explicitamente o tipo das variáveis:
+
 let sales: number = 123_456_789 => number
 let couse: string = "typeScript" => string
 let is_published: boolean = true => boolean
+
 Porém, o compilador typescript é capaz de inferir cada um desses tipos de forma automatica:
+
 let sales = 123_456_789 => number
 let couse = "typeScript" => string
 let is_published = true => boolean
 
+Quando uma variável é inicializada mas seu valor omitido, ela adquire o tipo any:
+let level => any
+
+Pelas boas práticas é desejável não utilizar o any type para evitar bugs. Também não faz sentido utilizar typescript para se beneficiar se sua tipagem forte ao mesmo tempo em que se utiliza de tipo any.
+
+Ao declararmos uma função devemos nos certificar de atribuir um tipo para o parâmetro de forma explícita, pois o compilador automaticamente o define como any caso isso não seja feito.
+
+Assim como em javascript, em typescript podemos declarar arrays com elementos de tipos diferentes:
+
+let numbers = [1, 2, '3']
+
+Se quisermos passar este array em uma função que aceite apenas array de numbers pode causar erro.
+Ao declararmos um array podemos especificar o tipo de seus membros para evitar que isso ocorra e assim aparece o erro na própria declaração:
+
+let numbers: number[] = [1, 2, '3']
+
+Ao declararmos um array cujo tipo de todos os elementos é o mesmo, o tipo do array passa a ser esse e toda tentativa de adicionar um elemento de tipo diferente arremeça um erro.
+
+let numbers = [1, 2, 3]
+numbers.push('a')
+
+Se o array for declarado vazio, seu tipo passa a ser any
+
+let numbers = [] => let numbers: any[]
 
