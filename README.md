@@ -214,7 +214,7 @@ function calculateTax( income: number, taxYear?: number):number  {
 calculateTax(10_000)
 ```
 
-Note que desta forma o compilador ainda acusará um erro, pos o valor de txYear neste caso será "undefined". Javascript por padrão coloca o valor "undefined" nas variáveis que não são utilizadas. Para resolvermos este problema basta definir um valor padrão caso taxYear não seja infomado:
+Note que desta forma o compilador ainda acusará um erro, pos o valor de ```taxYear``` neste caso será ```undefined```. Javascript por padrão coloca o valor ```undefined``` nas variáveis que não são utilizadas. Para resolvermos este problema basta definir um valor padrão caso ```taxYear``` não seja infomado:
 
 ```ts
 function calculateTax( income: number, taxYear?: number):number  {
