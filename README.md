@@ -98,8 +98,7 @@ Tuple é um novo tipo introduzido pelo typescript, ele possui o tamanho de sua l
 
 let user: [number, string] = [1, 'Diego']
 
-- Enums
-É um conjunto de constantes relacionadas entre si. Pode ser utilizado como tipo durante declaração de uma variável cujo valor atribuído deve ser um de seus membros. Quando o valor de cada membro não é declarado explicitamente passa a ser uma progrssão dos números naturais começando do 0
+- Enums: É um conjunto de constantes relacionadas entre si. Pode ser utilizado como tipo durante declaração de uma variável cujo valor atribuído deve ser um de seus membros. Quando o valor de cada membro não é declarado explicitamente passa a ser uma progrssão dos números naturais começando do 0
 
 enum Size { Small, Medium, Large}
 
