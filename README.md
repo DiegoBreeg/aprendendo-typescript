@@ -258,5 +258,10 @@ employee.name = 'Diego'
 Também é possível tornar a propropriedade do objeto opicional:
 
 ```ts
-
+let employee: {
+    id: number,
+    name?: string
+} = { id: 1 }
+employee.name = 'Diego'
 ```
+
