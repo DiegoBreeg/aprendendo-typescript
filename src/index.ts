@@ -1,5 +1,5 @@
-function calculator(a: number, b: number): number {
-
-    let n = a * b
-    return n
-}
+let employee: {
+    id: number,
+    name?: string
+} = { id: 1 }
+employee.name = 'Diego'

@@ -1,6 +1,4 @@
 "use strict";
-function calculator(a, b) {
-    let n = a * b;
-    return n;
-}
+let employee = { id: 1 };
+employee.name = 'Diego';
 //# sourceMappingURL=index.js.map

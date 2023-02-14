@@ -202,7 +202,7 @@ function calculateTax( income: number): number {
 
 Ainda sobre funções, existe uma configuração no tsconfig.json chamada "noUnusedLocals", quando ativada gera erro ao declararmos variáveis que não são usadas no escopo da função.
 
-Se declararmos uma função que recebe dois parâmetros, ao executá-la devemos fornecer exatamente 2 parâmetros. Se passarmos mais ou menos do que isso o compilador gera erro. Para podermos passar mais ou menos parâmetros podemos o tornar opicial colocando um sinal de interrocação (?) no nome do parâmetro:
+Se declararmos uma função que recebe dois parâmetros, ao executá-la devemos fornecer exatamente 2 parâmetros. Se passarmos mais ou menos do que isso o compilador gera erro. Para podermos passar mais ou menos parâmetros podemos usar o tornar opicial colocando um sinal de interrocação (?) no nome do parâmetro:
 
 ```ts
 function calculateTax( income: number, taxYear?: number):number  {
@@ -237,4 +237,26 @@ function calculateTax( income: number, taxYear = 2022):number  {
 ```
 Desta forma o compilador entende que o segundo parâmetro é opicial e deve ser do tipo number, uma vez que o valor padrão é number, também, se o valor não for informado passa a ser o valor padrão.
 
+- Objects
 
+Em javascript objetos são dinâmicos, então sua forma pode mudar ao longo da vida de nosso programa. Em typescript isso não é válido:
+
+```ts
+let employee = { id: 1}
+employee.name = 'Diego'
+```
+Para que seja possível adicionar um novo valor no objeto a propriedade já deve ter sido declarada:
+
+```ts
+let employee: {
+    id: number,
+    name: string
+} = { id: 1, name: '' }
+employee.name = 'Diego'
+```
+
+Também é possível tornar a propropriedade do objeto opicional:
+
+```ts
+
+```
