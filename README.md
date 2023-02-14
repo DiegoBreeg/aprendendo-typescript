@@ -29,9 +29,9 @@ O resultado deve ser um arquivo chamado tsconfig.json e o terminal exibirá mens
   skipLibCheck: true
   forceConsistentCasingInFileNames: true"
 
-- "target" é o responsável por alterar a versão alvo em que javascript será transpilado. apagando es2016, segurando ctrl+spaço podemos verificar quais versões podem ser utilizadas.
+- "target" é o responsável por alterar a versão alvo em que javascript será transpilado. Apagando es2016 do value, segurando ctrl+spaço podemos verificar quais versões podem ser utilizadas.
 
-- "module" assim como em package.json também é possível alterar a forma como será importado/exportado as bibliotecas.
+- "module" assim como em package.json também é possível alterar a forma como será importada/exportada as bibliotecas.
 
 - "rootDir" é a configuração que determinará a raíz do projeto. Por convensão utiliza-se o diretório ./src
 
