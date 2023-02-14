@@ -29,12 +29,14 @@ Podemos criar um arquivo de configuração para o compilador typescript com o se
 
 O resultado deve ser um arquivo chamado tsconfig.json e o terminal exibirá mensaguem parecida com esta:
 
-```"target: es2016
+```
+"target: es2016
   module: commonjs
   strict: true
   esModuleInterop: true
   skipLibCheck: true
-  forceConsistentCasingInFileNames: true"```
+  forceConsistentCasingInFileNames: true"
+  ```
 
 - "target" é o responsável por alterar a versão alvo em que javascript será transpilado. Apagando es2016 do value, segurando ctrl+spaço podemos verificar quais versões podem ser utilizadas.
 
