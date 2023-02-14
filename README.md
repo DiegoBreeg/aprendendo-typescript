@@ -11,11 +11,11 @@ Typescript é essencialmente javascript com checagem de tipos, um código feito 
 
 Typescript é um superset de javascript, ele tem tudo que existe no javascript e um adicional de features. Qualquer código javascrip é um código typescrip válido.
 
-É necessário ter o node instalado, e a partir do node podemos utilizar o npm para instalar o typescript de forma global no sistema.
+É necessário ter o node instalado, e a partir do node podemos utilizar o npm para instalar o typescript de forma global no sistema:
 
 ```$npm i -g typescrip```
 
-Para verificar se a instalação foi feita corretamente basta utilizar
+Para verificar se a instalação foi feita corretamente basta utilizar:
 
 ```$tsc -v```
 
@@ -25,15 +25,16 @@ Por padrão typescript transpila para ES5, ou seja, ao declarar-mos uma let ela 
 
 Podemos criar um arquivo de configuração para o compilador typescript com o seguinte código
 
-$tsc --init
+```$tsc --init```
 
 O resultado deve ser um arquivo chamado tsconfig.json e o terminal exibirá mensaguem parecida com esta:
-"target: es2016
+
+```"target: es2016
   module: commonjs
   strict: true
   esModuleInterop: true
   skipLibCheck: true
-  forceConsistentCasingInFileNames: true"
+  forceConsistentCasingInFileNames: true"```
 
 - "target" é o responsável por alterar a versão alvo em que javascript será transpilado. Apagando es2016 do value, segurando ctrl+spaço podemos verificar quais versões podem ser utilizadas.
 
