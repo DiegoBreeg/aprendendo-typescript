@@ -169,7 +169,7 @@ function calculateTax( income: number): number {
 
 Existe uma configuração no tsconfig.json que se chama noUnusedParameters, ela define se o compilador permitirá parâmetros que não são utilizados nas funções.
 
-Se definirmos um retorno, e em seguida colocarmos o retorno dentro de uma condição, o compilador arremeça um erro dizendo que undefined não faz parte do retorno. Isso acontece porque por padrão uma função javascript sem retorno declarado retorna "undefined", e como o retorno foi especificado o erro acontece:
+Se definirmos um retorno, e em seguida colocarmos o retorno dentro de uma condição, o compilador arremeça um erro dizendo um dos caminhos do códio está retornando ```undefined```. Isso acontece porque por padrão uma função javascript sem retorno declarado retorna "undefined", e como o retorno foi especificado como ```number``` o erro acontece:
 
 ```ts
 function calculateTax( income: number): number {
@@ -235,4 +235,6 @@ function calculateTax( income: number, taxYear = 2022):number  {
     return income * 1.3
 }
 ```
+Desta forma o compilador entende que o segundo parâmetro é opicial e deve ser do tipo number, uma vez que o valor padrão é number, também, se o valor não for informado passa a ser o valor padrão.
+
 
