@@ -1,7 +1,4 @@
 let employee: {
-    id: number,
-    name?: string
-} = { id: 1 }
-
-employee.name = 'diego'
-console.log(employee)
+    readonly id: number,
+    name: string
+} = { id: 1, name: 'Diego'}

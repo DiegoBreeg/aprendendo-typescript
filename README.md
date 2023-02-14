@@ -265,3 +265,13 @@ let employee: {
 employee.name = 'Diego'
 ```
 
+Se quisermos determinar que uma das propriedades deste objeto seja apenas para leitura basta colocarmos o prefixo ```readonly``` no nome da propriedade:
+
+```ts
+let employee: {
+    readonly id: number,
+    name: string
+} = { id: 1, name: 'Diego'}
+employee.id = 0
+```
+
