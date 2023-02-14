@@ -12,10 +12,12 @@ Typescript é essencialmente javascript com checagem de tipos, um código feito 
 Typescript é um superset de javascript, ele tem tudo que existe no javascript e um adicional de features. Qualquer código javascrip é um código typescrip válido.
 
 É necessário ter o node instalado, e a partir do node podemos utilizar o npm para instalar o typescript de forma global no sistema.
+
 ```$npm i -g typescrip```
 
 Para verificar se a instalação foi feita corretamente basta utilizar
-$tsc -v
+
+```$tsc -v```
 
 Também é necessário ter um editor de código instalado, recomendo fortemente a utilização do vs code.
 
