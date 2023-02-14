@@ -189,3 +189,15 @@ function calculateTax( income: number) {
 }
 ```
 Dica: para que um bug como este não passe despercebido existe uma configuração em tsconfig chamda "noImplicitReturns", quando ativada, esta configuração faz com que o compilador avise que há um caminho no código da função sem retorno.
+
+Ao ativar a configuração, para fazer o código funcionar normalmente basta definir todos os retornos:
+
+```ts
+function calculateTax( income: number): number {
+    if (income <50_000)
+        return income * 1.2
+    return income * 1.3
+}
+```
+
+Ainda sobre funções, existe uma configuração no tsconfig.json chamada "noUnusedLocals", quando ativada gera erro ao declararmos variáeis que não são usadas no escopo da função.
