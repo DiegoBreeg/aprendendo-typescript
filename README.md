@@ -46,3 +46,18 @@ $tsc
 
 toda a transpilação deve ocorrer corretamente e no final um diretório ./dist deve aparecer com o arquivo javascript dentro dele.
 
+- Fundamentos: any types, Arrays, Tuples, Enums, Functions e objects.
+
+Javascript possui built-in types que são: number, string, boolean, null, undefined e object.
+Typescript introduz novos tipos que são: any, unknown, never, enum e tuple
+
+Podemos declarar explicitamente o tipo das variáveis:
+let sales: number = 123_456_789 => number
+let couse: string = "typeScript" => string
+let is_published: boolean = true => boolean
+Porém, o compilador typescript é capaz de inferir cada um desses tipos de forma automatica:
+let sales = 123_456_789 => number
+let couse = "typeScript" => string
+let is_published = true => boolean
+
+
