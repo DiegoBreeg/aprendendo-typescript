@@ -118,8 +118,8 @@ numbers.push('a')
 
 Se o array for declarado vazio, seu tipo passa a ser any
 
-```
-tslet numbers = [] => let numbers: any[]
+```ts
+let numbers = [] => let numbers: any[]
 ```
 
 Então, se quisermos declarar um array vazio com um tipo específico precisamos especificar este tipo na declaração:
