@@ -147,7 +147,7 @@ enum Size { Small, Medium, Large}
   Small, Medium e Large são atribuídas a Size e passam a ter seu valor apenas para leitura. Depois de declarado, o enum pode ser utilizado como o tipo de uma variável.
 
 ```ts
-let mySize: Size = Size.Medium => 1
+let mySize: Size = Size.Medium //=> 1
 ```
 
 O valor de cada constante pode ser definido manualmente simplesmente colocando o sinal de igualdade e em seguida passar o valor
@@ -166,3 +166,26 @@ function calculateTax( income: number): number {
     return 0;
 }
 ```
+
+Existe uma configuração no tsconfig.json que se chama noUnusedParameters, ela define se o compilador permitirá parâmetros que não são utilizados nas funções.
+
+Se definirmos um retorno, e em seguida colocarmos o retorno dentro de uma condição, o compilador arremeça um erro dizendo que undefined não faz parte do retorno. Isso acontece porque por padrão uma função javascript sem retorno declarado retorna "undefined", e como o retorno foi especificado o erro acontece:
+
+```ts
+function calculateTax( income: number): number {
+    if (income < 50_000)
+        return income * 1.2
+    //undefined
+}
+```
+
+Se removermos a declaração do tipo do retorno o compilador não arremeçará mais o erro, porém nossa aplicação poderá gerar bugs, portanto, é altemente recomendável explicitar o tipo de retorno dad funções.
+
+```ts
+function calculateTax( income: number) {
+    if (income <50_000)
+        return income * 1.2
+    //undefined
+}
+```
+Dica: para que um bug como este não passe despercebido existe uma configuração em tsconfig chamda "noImplicitReturns", quando ativada, esta configuração faz com que o compilador avise que há um caminho no código da função sem retorno.
