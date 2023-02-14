@@ -13,11 +13,15 @@ Typescript é um superset de javascript, ele tem tudo que existe no javascript e
 
 É necessário ter o node instalado, e a partir do node podemos utilizar o npm para instalar o typescript de forma global no sistema:
 
-```$npm i -g typescrip```
+```bash
+$npm i -g typescrip
+```
 
 Para verificar se a instalação foi feita corretamente basta utilizar:
 
-```$tsc -v```
+```bash
+$tsc -v
+```
 
 Também é necessário ter um editor de código instalado, recomendo fortemente a utilização do vs code.
 
@@ -25,11 +29,13 @@ Por padrão typescript transpila para ES5, ou seja, ao declarar-mos uma let ela 
 
 Podemos criar um arquivo de configuração para o compilador typescript com o seguinte código
 
-```$tsc --init```
+```bash
+$tsc --init
+```
 
 O resultado deve ser um arquivo chamado tsconfig.json e o terminal exibirá mensaguem parecida com esta:
 
-```
+```console
 target: es2016
 module: commonjs
 strict: true
@@ -51,7 +57,9 @@ forceConsistentCasingInFileNames: true
 - "noEmitOnError" é uma configuração interessante para ser utilizada, pois impede que o javascript seja gerado em caso de erros
 
 Feita toda a configuração, basta digitar
-```$tsc```
+```bash
+$tsc
+```
 
 toda a transpilação deve ocorrer corretamente e no final um diretório ./dist deve aparecer com o arquivo javascript dentro dele.
 
@@ -62,23 +70,25 @@ Typescript introduz novos tipos que são: any, unknown, never, enum e tuple
 
 Podemos declarar explicitamente o tipo das variáveis:
 
-```
-let sales: number = 123_456_789 => number
-let couse: string = "typeScript" => string
-let is_published: boolean = true => boolean
+```ts
+let sales: number = 123_456_789 //=> number
+let couse: string = "typeScript" //=> string
+let is_published: boolean = true //=> boolean
 ```
 
 Porém, o compilador typescript é capaz de inferir cada um desses tipos de forma automatica:
 
-```
-let sales = 123_456_789 => number
-let couse = "typeScript" => string
-let is_published = true => boolean
+```ts
+let sales = 123_456_789 //=> number
+let couse = "typeScript" //=> string
+let is_published = true //=> boolean
 ```
 
 Quando uma variável é inicializada mas seu valor omitido, ela adquire o tipo any:
 
-```let level => any```
+```ts
+let level //=> any
+```
 
 Pelas boas práticas é desejável não utilizar o any type para evitar bugs. Também não faz sentido utilizar typescript para se beneficiar se sua tipagem forte ao mesmo tempo em que se utiliza de tipo any.
 
@@ -88,33 +98,43 @@ Ao declararmos uma função devemos nos certificar de atribuir um tipo para o pa
 
 Assim como em javascript, em typescript podemos declarar arrays com elementos de tipos diferentes:
 
-```let numbers = [1, 2, '3']```
+```ts
+let numbers = [1, 2, '3']
+```
 
 Se quisermos passar este array em uma função que aceite apenas array de numbers pode causar erro.
 Ao declararmos um array podemos especificar o tipo de seus membros para evitar que isso ocorra e assim aparece o erro na própria declaração:
 
-```let numbers: number[] = [1, 2, '3']```
+```ts
+let numbers: number[] = [1, 2, '3']
+```
 
 Ao declararmos um array cujo tipo de todos os elementos é o mesmo, o tipo do array passa a ser esse e toda tentativa de adicionar um elemento de tipo diferente arremeça um erro.
 
-```
+```ts
 let numbers = [1, 2, 3]
 numbers.push('a')
 ```
 
 Se o array for declarado vazio, seu tipo passa a ser any
 
-```let numbers = [] => let numbers: any[]```
+```
+tslet numbers = [] => let numbers: any[]
+```
 
 Então, se quisermos declarar um array vazio com um tipo específico precisamos especificar este tipo na declaração:
 
-```let numbers: number[]```
+```ts
+let numbers: number[]
+```
 
 - Tuples
   
   Tuple é um novo tipo introduzido pelo typescript, ele possui o tamanho de sua length fixa, no qual cada um de seus elementos tem um tipo particular
 
-```let user: [number, string] = [1, 'Diego']```
+```ts
+let user: [number, string] = [1, 'Diego']
+```
 
 - Enums
 
@@ -126,11 +146,13 @@ enum Size { Small, Medium, Large}
 
   Small, Medium e Large são atribuídas a Size e passam a ter seu valor apenas para leitura. Depois de declarado, o enum pode ser utilizado como o tipo de uma variável.
 
-```let mySize: Size = Size.Medium => 1```
+```ts
+let mySize: Size = Size.Medium => 1
+```
 
 O valor de cada constante pode ser definido manualmente simplesmente colocando o sinal de igualdade e em seguida passar o valor
 
-```
+```ts
 enum Color {Red = 'r', Green = 'g', Blue = 'b'}
 let myColor: Color = Color.Blue => 'b'
 ```
