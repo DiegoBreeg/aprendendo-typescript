@@ -1,28 +1,10 @@
-type Input = { name: string, amount: number }
-
-type Item = {
-    name: string,
-    output: number,
-    input: Input[]
+function kgToLbs(weight:  number | string): number {
+    //Narrowing
+    if(typeof weight === 'number') 
+        return weight * 2.2
+    else
+        return parseInt(weight) * 2.2
 }
 
-const carbonSubstrate: Item = {
-    name: "carbon Substrate",
-    output: 20,
-    input: [{
-        name: "plant_fibers",
-        amount: 16
-    },
-    {
-        name: "Stone Dust",
-        amount: 2
-    }]
-}
-
-const crushedStone: Item = {
-    name: "crushed Stone",
-    output: 1,
-    input: []
-}
-
-console.log(crushedStone)
+kgToLbs(10)
+kgToLbs('10kg')

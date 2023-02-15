@@ -325,4 +325,28 @@ Agora temos um único local utilizado para configurar o shape de todos os employ
 
 - Union Types
 
+Com union type podemos dar a uma variável ou parâmetro de função mais de um tipo:
+
+```ts
+function kgToLbs(weight:  number | string): number {
+    
+}
+
+kgToLbs(10)
+kgToLbs('10kg')
+```
+Utilizando esta técnica ao chamarmos o parâmetro só poderemos ver os métodos e propriedades que são comuns aos dois tipos. Existe uma técnica chamada narrowing que permite especificar o tipo que iremos trabalhar e assim mostrar todos os métodos e propriedades desse tipo específico:
+
+```ts
+function kgToLbs(weight:  number | string): number {
+    //Narrowing
+    if(typeof weight === 'number') 
+        return weight * 2.2
+    else
+        return parseInt(weight) * 2.2
+}
+
+kgToLbs(10)
+kgToLbs('10kg')
+```
 
