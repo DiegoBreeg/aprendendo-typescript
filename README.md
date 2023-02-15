@@ -275,3 +275,52 @@ let employee: {
 employee.id = 0
 ```
 
+Quanto aos métodos, podemos criar assinaturas para eles, que serão responsáveis por determinar o tipo dos parâmetros e do retorno do método.
+
+```js
+let employee: {
+    readonly id: number,
+    name: string,
+    retire: (date: Date) => void
+} = {
+    id: 1,
+    name: 'Diego',
+    retire: (date: Date) => {
+        console.log(date)
+    }
+}
+```
+
+- Tipos Avançados: Type aliases, unions and intersections, type narrowing, nullable types, the never type.
+
+- Type Aliases
+
+O código que utilizamos anteriormente para explicar o funcionamento dos objetos possui três problemas.
+
+O primeiro problema é que se quisermos criar outro objeto employee seguindo essa implementação teremos que repitir o código do shape portanto geraremos código duplicado. Isso viola o princípio dry: não se repita.
+
+O segundo problema é que o outro objeto employee terá outras propriedades, então suas propriedads serão incosistentes. Isso ocorre porque não teremos um único local para definir o shape de ambos os objetos.
+
+O terceiro problema é que essa estrutura torna o código um pouco difícil de se entender.
+
+Para resolver estes problema podemos umsar o tipo alias. Usando o tipo alias podemos definir um tipo customizado
+
+```ts
+type Employee = {
+    readonly id: number,
+    name: string,
+    retire: (date: Date) => void    
+}
+
+let employee: Employee = {
+    id: 1,
+    name: 'Diego',
+    retire: (date: Date) => {
+        console.log(date)
+    }
+}
+```
+
+Agora temos um único local utilizado para configurar o shape de todos os employees que criarmos.
+
+
