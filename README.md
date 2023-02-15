@@ -291,7 +291,7 @@ let employee: {
 }
 ```
 
-- Tipos Avançados: Type aliases, unions and intersections, type narrowing, nullable types, the never type.
+- Tipos Avançados: Type Aliases, Unions and Intersections, Type Narrowing, Nullable Types, The Never Type.
 
 - Type Aliases
 
@@ -322,5 +322,7 @@ let employee: Employee = {
 ```
 
 Agora temos um único local utilizado para configurar o shape de todos os employees que criarmos.
+
+- Union Types
 
 
