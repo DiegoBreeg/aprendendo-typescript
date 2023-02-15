@@ -352,4 +352,22 @@ kgToLbs('10kg')
 
 - Intersection Types
 
-Acabamos de aprender que podemos utilizar o union para tonar uma variável ou parâmetro de função um de muitos tipos. Agora veremos como utilizar a Intersection para os tomar de dois tipos ao mesmo tempo.
+Acabamos de aprender que podemos utilizar o union para tonar uma variável ou parâmetro de função um de muitos tipos. Agora veremos como utilizar a Intersection para os tornar de dois tipos ao mesmo tempo:
+
+```ts
+type Draggable = {
+    drag: () => void
+}
+
+type Resizable = {
+    resize: () => void
+}
+
+type UIWidget = Draggable & Resizable
+
+let textBox: UIWidget = {
+    drag: ()=> {},
+    resize: () => {}
+}
+```
+
