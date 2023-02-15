@@ -335,7 +335,7 @@ function kgToLbs(weight:  number | string): number {
 kgToLbs(10)
 kgToLbs('10kg')
 ```
-Utilizando esta técnica ao chamarmos o parâmetro só poderemos ver os métodos e propriedades que são comuns aos dois tipos. Existe uma técnica chamada narrowing que permite especificar o tipo que iremos trabalhar e assim mostrar todos os métodos e propriedades desse tipo específico:
+Utilizando esta técnica, ao chamarmos o parâmetro, só poderemos ver os métodos e propriedades que são comuns aos dois tipos. Existe uma técnica chamada narrowing que permite especificar o tipo que iremos trabalhar e assim mostrar todos os métodos e propriedades desse tipo específico:
 
 ```ts
 function kgToLbs(weight:  number | string): number {
@@ -350,3 +350,6 @@ kgToLbs(10)
 kgToLbs('10kg')
 ```
 
+- Intersection Types
+
+Acabamos de aprender que podemos utilizar o union para tonar uma variável ou parâmetro de função um de muitos tipos. Agora veremos como utilizar a Intersection para os tomar de dois tipos ao mesmo tempo.
