@@ -371,3 +371,47 @@ let textBox: UIWidget = {
 }
 ```
 
+- Literal Types
+
+Literal types provê uma maneira de limitar os valores que uma variável pode receber. Ao invés de passar o tipo que queremos que a variável seja, passamos literalmente os valores que é permitido ela ter:
+
+```ts
+// Literal (exact, specific)
+let quantity: 50 = 50
+```
+
+Para especificar mais de um valor é só combinar com operador union:
+
+```ts
+let quantity: 50 | 100 = 50
+```
+
+Também é possível criar um tipo personalizado:
+
+```ts
+type Quantity = 50 | 100 
+let quantity: Quantity = 100
+
+type Metric = 'cm' | 'inch'
+```
+
+- Opitinal Chaining
+
+Em typescript existe um operador chamado "Optional property acess operator". ele é representado pelo sinal de interrocação (?). Quando declaramos uma função que possui mais de um valor de retorno e um desses valores é null ou undefined podemos usar o operador Optional na propriedade para que esta propriedade evitando que seja necessário criar uma estrutura condicional e retorno para cada valor que a função possa retornar:
+
+```ts
+type Customer = {
+    birthday: Date
+}
+
+function getCustomer(id: number): Customer | null | undefined{
+    return id === 0 ? null : {birthday: new Date()}
+}
+
+let customer = getCustomer(1)
+    //Oprional property acess operator
+    console.log(customer?.birthday)
+```
+
+
+

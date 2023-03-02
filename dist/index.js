@@ -1,10 +1,7 @@
 "use strict";
-function kgToLbs(weight) {
-    if (typeof weight === 'number')
-        return weight * 2.2;
-    else
-        return parseInt(weight) * 2.2;
+function makeItem(name, output) {
+    return name === '' ? null : { name: name, output: output, input: [] };
 }
-kgToLbs(10);
-kgToLbs('10kg');
+let carbonSubstrate = makeItem('', 20);
+console.log(carbonSubstrate === null || carbonSubstrate === void 0 ? void 0 : carbonSubstrate.input);
 //# sourceMappingURL=index.js.map
