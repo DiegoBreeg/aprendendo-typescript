@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "start": "node ./dist/index.js"
+        "start": "tsc && node ./dist/index.js",
+        "git": "git add . && git commit -a -m'conteúdo adicionado no md' && git push"
     }
 }
