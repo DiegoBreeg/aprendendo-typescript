@@ -1,6 +1,10 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const chapter_3_1 = require("./chapter-3");
-console.log((0, chapter_3_1.squareOf)(2));
-(0, chapter_3_1.typeCheck)({});
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+const c = new Person('diego', 'lucas');
+console.log(c);
 //# sourceMappingURL=index.js.map

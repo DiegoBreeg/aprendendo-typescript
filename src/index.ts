@@ -1,6 +1,9 @@
-import { squareOf } from "./chapter-3"
+class Person {
+    constructor(
+        public firstName: string,
+        public lastName: string
+    ){}
+}
 
-
-console.log(squareOf(2))
-
-
+const c = new Person('diego', 'lucas')
+console.log(c)
