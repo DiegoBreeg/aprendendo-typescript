@@ -1,7 +1,7 @@
 class Person {
     constructor(
-        public firstName: string,
-        public lastName: string
+        private firstName: string,
+        private lastName: string
     ){}
 }
 
